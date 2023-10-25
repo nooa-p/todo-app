@@ -7,42 +7,30 @@
 /* dark & light mode variables */
 /* light theme */
 
-body {
+:root {
     --bkg-color: hsl(236, 33%, 92%);
     --text-color: hsl(235, 19%, 35%);
-}
-
-body.dark {
-    --bkg-color: hsl(235, 21%, 11%);
-    --text-color: hsl(234, 39%, 85%);
-}
-
-header {
     --bkg-image: url(./images/bg-desktop-light.jpg);
 }
 
-header.dark { 
+.dark {
+    --bkg-color: hsl(235, 21%, 11%);
+    --text-color: hsl(234, 39%, 85%);
     --bkg-image: url(./images/bg-desktop-dark.jpg);
 }
 
 /* dark theme */
 
 @media (prefers-color-scheme: dark) {
-    body {
+    :root {
         --bkg-color: hsl(235, 21%, 11%);
         --text-color: hsl(234, 39%, 85%);
-    }
-
-    body.light {
-        --bkg-color: hsl(236, 33%, 92%);
-        --text-color: hsl(235, 19%, 35%);
-    }
-
-    header {
         --bkg-image: url(./images/bg-desktop-dark.jpg);
     }
-    
-    header.light { 
+
+    .light {
+        --bkg-color: hsl(236, 33%, 92%);
+        --text-color: hsl(235, 19%, 35%);
         --bkg-image: url(./images/bg-desktop-light.jpg);
     }
 }
