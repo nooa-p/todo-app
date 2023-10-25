@@ -17,6 +17,14 @@ body.dark {
     --text-color: hsl(234, 39%, 85%);
 }
 
+header {
+    --bkg-image: url(./images/bg-desktop-light.jpg);
+}
+
+header.dark { 
+    --bkg-image: url(./images/bg-desktop-dark.jpg);
+}
+
 /* dark theme */
 
 @media (prefers-color-scheme: dark) {
@@ -29,9 +37,29 @@ body.dark {
         --bkg-color: hsl(236, 33%, 92%);
         --text-color: hsl(235, 19%, 35%);
     }
+
+    header {
+        --bkg-image: url(./images/bg-desktop-dark.jpg);
+    }
+    
+    header.light { 
+        --bkg-image: url(./images/bg-desktop-light.jpg);
+    }
 }
 
 body {
     background-color: var(--bkg-color);
     color: var(--text-color);
+}
+
+h1 { 
+    color: hsl(0, 0%, 98%);
+    text-transform: uppercase;
+    font-size: 2.125rem;
+    font-weight: 700;
+    letter-spacing: 1rem;
+}
+
+header {
+    background-image: var(--bkg-image);
 }
