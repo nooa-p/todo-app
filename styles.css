@@ -48,6 +48,7 @@ header {
     background-image: var(--bkg-image);
     height: 300px;
     background-size: cover;
+    margin-bottom: -13rem;
 }
 
 main {
@@ -60,6 +61,7 @@ main {
         "info info info";
     width: 500px;
     margin: 0 auto;
+    position: relative;
 }
 
 h1 { 
@@ -74,6 +76,14 @@ h1 {
 .mode-toggle {
     background-image: var(--mode-image);
     grid-area: toggle;
+    background-color: transparent;
+    border: none;
+    color: none;
+    width: 26px;
+    height: 26px;
+    background-position: center;
+    align-self: center;
+    justify-self: end;
 }
 
 .new {
