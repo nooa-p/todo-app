@@ -11,12 +11,14 @@
     --bkg-color: hsl(236, 33%, 92%);
     --text-color: hsl(235, 19%, 35%);
     --bkg-image: url(./images/bg-desktop-light.jpg);
+    --mode-image: url(./images/icon-moon.svg);
 }
 
 .dark {
     --bkg-color: hsl(235, 21%, 11%);
     --text-color: hsl(234, 39%, 85%);
     --bkg-image: url(./images/bg-desktop-dark.jpg);
+    --mode-image: url(./images/icon-sun.svg);
 }
 
 /* dark theme */
@@ -26,12 +28,14 @@
         --bkg-color: hsl(235, 21%, 11%);
         --text-color: hsl(234, 39%, 85%);
         --bkg-image: url(./images/bg-desktop-dark.jpg);
+        --mode-image: url(./images/icon-sun.svg);
     }
 
     .light {
         --bkg-color: hsl(236, 33%, 92%);
         --text-color: hsl(235, 19%, 35%);
         --bkg-image: url(./images/bg-desktop-light.jpg);
+        --mode-image: url(./images/icon-moon.svg);
     }
 }
 
@@ -40,14 +44,58 @@ body {
     color: var(--text-color);
 }
 
+header {
+    background-image: var(--bkg-image);
+    height: 300px;
+    background-size: cover;
+}
+
+main {
+    display: grid;
+    grid-template-areas: 
+        "header header toggle"
+        "new new new"
+        "todo todo todo"
+        "left state clear"
+        "info info info";
+    width: 500px;
+    margin: 0 auto;
+}
+
 h1 { 
     color: hsl(0, 0%, 98%);
     text-transform: uppercase;
     font-size: 2.125rem;
     font-weight: 700;
     letter-spacing: 1rem;
+    grid-area: header;
 }
 
-header {
-    background-image: var(--bkg-image);
+.mode-toggle {
+    background-image: var(--mode-image);
+    grid-area: toggle;
+}
+
+.new {
+    grid-area: new;
+}
+
+.all {
+    grid-area: todo;
+}
+
+.left {
+    grid-area: left;
+}
+
+.state { 
+    grid-area: state;
+}
+
+.clear {
+    grid-area: clear;
+}
+
+.info {
+    grid-area: info;
 }

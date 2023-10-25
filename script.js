@@ -1,4 +1,4 @@
-const btn = document.querySelector('.btn-toggle');
+const btn = document.querySelector('.mode-toggle');
 const header = document.querySelector('header');
 const prefer = window.matchMedia('(prefers-color-scheme: dark)');
 
