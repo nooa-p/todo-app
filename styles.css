@@ -12,6 +12,7 @@
     --text-color: hsl(235, 19%, 35%);
     --bkg-image: url(./images/bg-desktop-light.jpg);
     --mode-image: url(./images/icon-moon.svg);
+    --todo-color: hsl(0, 0%, 98%);
 }
 
 .dark {
@@ -19,6 +20,7 @@
     --text-color: hsl(234, 39%, 85%);
     --bkg-image: url(./images/bg-desktop-dark.jpg);
     --mode-image: url(./images/icon-sun.svg);
+    --todo-color: hsl(235, 24%, 19%);
 }
 
 /* dark theme */
@@ -29,6 +31,7 @@
         --text-color: hsl(234, 39%, 85%);
         --bkg-image: url(./images/bg-desktop-dark.jpg);
         --mode-image: url(./images/icon-sun.svg);
+        --todo-color: hsl(235, 24%, 19%);
     }
 
     .light {
@@ -36,6 +39,7 @@
         --text-color: hsl(235, 19%, 35%);
         --bkg-image: url(./images/bg-desktop-light.jpg);
         --mode-image: url(./images/icon-moon.svg);
+        --todo-color: hsl(0, 0%, 98%);
     }
 }
 
@@ -90,12 +94,35 @@ h1 {
 .new {
     grid-area: new;
     height: 2.778rem;
+    background-color: var(--todo-color);
+    list-style: none;
 }
 
 .all {
     grid-area: todo;
     display: grid;
     grid-auto-rows: 2.778rem;
+    list-style: none;
+}
+
+.all > li {
+    background-color: var(--todo-color);
+}
+
+.all > li::before {
+    content: '';
+    border: 1px solid hsl(233, 14%, 35%);
+    height: 18px;
+    width: 18px;
+    border-radius: 18px;
+    display: inline-block;
+    background-color:transparent;
+}
+
+.all > li:hover::before {
+    background: linear-gradient(var(--todo-color), var(--todo-color)) padding-box, linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%)) border-box;
+    border-radius: 18px;
+    border:1px solid transparent;
 }
 
 .left {
