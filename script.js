@@ -1,6 +1,8 @@
 const btn = document.querySelector('.btn-toggle');
 const prefer = window.matchMedia('(prefers-color-scheme: dark)');
 
+console.log(document.querySelector('.btn-toggle'));
+
 const current = localStorage.getItem('theme');
 if (current === 'dark') {
     document.body.classList.toggle('dark');
