@@ -89,10 +89,13 @@ h1 {
 
 .new {
     grid-area: new;
+    height: 2.778rem;
 }
 
 .all {
     grid-area: todo;
+    display: grid;
+    grid-auto-rows: 2.778rem;
 }
 
 .left {
