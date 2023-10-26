@@ -35,3 +35,17 @@ list.addEventListener('click', function(evt) {
         evt.target.classList.toggle('checked');
     }
 }, false);
+
+document.getElementById('new-item').addEventListener('submit', function() {
+    var li = document.createElement('li');
+    var span = document.createElement('span');
+    var input = document.getElementById('new-text').value;
+
+    var t = document.createTextNode(input);
+    span.appendChild(t);
+    li.appendChild(span);
+    if (input != '') {
+        list.appendChild(li);
+    }
+    document.getElementById('new-text').value = '';
+});
