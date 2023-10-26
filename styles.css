@@ -102,8 +102,14 @@ ul:first-of-type {
     margin-bottom: 25px;
 }
 
+ul:first-of-type > li > span {
+    display: inline-block;
+    width: 100%;
+}
+
 ul:first-of-type > li {
     border-radius: 5px;
+    border: 0;
 }
 
 li {
@@ -111,6 +117,8 @@ li {
     background-color: var(--todo-color);
     display: flex;
     align-items: center;
+    border-bottom: 1px solid hsl(233, 14%, 35%);
+    padding-right: 20px;
 }
 
 li:first-child {
@@ -141,7 +149,18 @@ li > span {
 
 input[type=text] {
     background: transparent;
-    border: none;
+    border: 0;
+    width: 100%;
+    color: var(--text-color);
+}
+
+input::placeholder {
+    color: hsl(234, 11%, 52%);
+}
+
+input[type=text]:focus {
+    outline: none;
+    color: var(--text-color);
 }
 
 .btm {
