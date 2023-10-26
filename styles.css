@@ -142,9 +142,18 @@ li:hover::before {
     border: 1px solid transparent;
 }
 
+li.checked::before {
+    background: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%)) border-box;
+    border: 1px solid transparent;
+}
+
 li > span {
     margin-top: 5px;
     display: inline-block;
+}
+
+.checked > span {
+    text-decoration: line-through;
 }
 
 input[type=text] {
@@ -165,7 +174,7 @@ input[type=text]:focus {
 
 .btm {
     width: 100%;
-    height: 50px;
+    height: 45px;
     display: flex;
     justify-content: space-between;
     align-items: center;

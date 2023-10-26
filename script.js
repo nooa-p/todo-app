@@ -1,6 +1,7 @@
 const btn = document.querySelector('.mode-toggle');
 const header = document.querySelector('header');
 const prefer = window.matchMedia('(prefers-color-scheme: dark)');
+var list = document.querySelector('.list');
 
 const current = localStorage.getItem('theme');
 if (current === 'dark') {
@@ -29,3 +30,8 @@ btn.addEventListener("click", function() {
     localStorage.setItem('theme', theme);
 });
 
+list.addEventListener('click', function(evt) {
+    if (evt.target.tagName === 'LI') {
+        evt.target.classList.toggle('checked');
+    }
+}, false);
