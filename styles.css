@@ -79,7 +79,8 @@ h1 {
     font-size: 2.125rem;
     font-weight: 700;
     letter-spacing: 1rem;
-    line-height: 2.125rem;
+    line-height: 1.44rem;
+    margin-top:7px;
 }
 
 .mode-toggle {
@@ -89,4 +90,43 @@ h1 {
     width: 26px;
     height: 26px;
     background-position: center;
+}
+
+ul {
+    list-style-type: none;
+    width: 100%;
+}
+
+ul:first-of-type {
+    margin-bottom: 15px;
+}
+
+ul:first-of-type > li {
+    border-radius: 5px;
+}
+
+li {
+    height: 65px;
+    background-color: var(--todo-color);
+    display: flex;
+    align-items: center;
+}
+
+li:first-child {
+    border-radius: 5px 5px 0 0;
+}
+
+li::before {
+    content: '';
+    background: transparent;
+    height: 26px;
+    width: 26px;
+    border: 1px solid hsl(233, 14%, 35%);
+    border-radius: 26px;
+    margin-left: 15px;
+}
+
+li:hover::before {
+    background: linear-gradient(var(--todo-color), var(--todo-color)) content-box, linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%)) border-box;
+    border: 1px solid transparent;
 }
