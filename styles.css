@@ -143,8 +143,9 @@ li:hover::before {
 }
 
 li.checked::before {
-    background: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%)) border-box;
-    border: 1px solid transparent;
+    background-image: url(./images/icon-check.svg), linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 li > span {
