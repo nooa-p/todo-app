@@ -40,10 +40,13 @@ document.getElementById('new-item').addEventListener('submit', function() {
     var li = document.createElement('li');
     var span = document.createElement('span');
     var input = document.getElementById('new-text').value;
+    var close = document.createElement('div');
+    close.className = 'close';
 
     var t = document.createTextNode(input);
     span.appendChild(t);
     li.appendChild(span);
+    li.appendChild(close);
     if (input != '') {
         list.appendChild(li);
     }
