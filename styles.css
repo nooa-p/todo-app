@@ -197,6 +197,7 @@ input[type=text]:focus {
     align-items: center;
     background-color: var(--todo-color);
     border-radius: 0 0 5px 5px;
+    padding: 0 20px;
 }
 
 .btm > div {
@@ -207,7 +208,26 @@ input[type=text]:focus {
 }
 
 .btm > div:nth-child(2) {
+    display: flex;
+    justify-content: space-around;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+label > div {
+    font-size: 14px;
+    font-weight: 700;
     text-align: center;
+}
+
+label > .checked {
+    color: hsl(220, 98%, 61%);
+}
+
+label > div:hover {
+    color: var(--text-color);
 }
 
 .btm > div:last-child {
