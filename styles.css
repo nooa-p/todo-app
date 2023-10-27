@@ -148,6 +148,21 @@ li.checked::before {
     background-repeat: no-repeat;
 }
 
+.close {
+    height: 18px;
+    width: 18px;
+    content: '';
+    background-image: url(./images/icon-cross.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left:auto;
+    visibility: hidden;
+}
+
+li:hover > .close {
+    visibility: visible;
+}
+
 li > span {
     margin-top: 5px;
     display: inline-block;
