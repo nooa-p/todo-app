@@ -89,12 +89,22 @@ states.addEventListener('change', (evt) => {
             for (const child of list.children) {
                 if (child.classList.contains('checked')) {
                     child.classList.add('hide');
+                } else {
+                    child.classList.remove('hide');
                 }
             }
         } else if (trg.id === 'complete') {
-
+            for (const child of list.children) {
+                if (!child.classList.contains('checked')) {
+                    child.classList.add('hide');
+                } else {
+                    child.classList.remove('hide');
+                }
+            }
         } else {
-
+            for (const child of list.children) {
+                child.classList.remove('hide');
+            }
         };
     }
 }, false);
