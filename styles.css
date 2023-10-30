@@ -45,10 +45,10 @@
     }
 }
 
-body {
-    background-color: var(--bkg-color);
-    color: var(--text-color);
-    transition: all 0.30s ease;
+main {
+    width: 600px;
+    margin: 0 auto;
+    position: relative;
 }
 
 header {
@@ -58,10 +58,39 @@ header {
     margin-bottom: -13rem;
 }
 
-main {
-    width: 600px;
-    margin: 0 auto;
-    position: relative;
+@media (max-width: 450px) {
+    :root {
+        --bkg-image: url(./images/bg-mobile-light.jpg);
+    }
+
+    .dark {
+        --bkg-image: url(./images/bg-mobile-dark.jpg);
+    }
+    
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --bkg-image: url(./images/bg-mobile-dark.jpg);
+        }
+
+        .light {
+            --bkg-image: url(./images/bg-mobile-light.jpg);
+        }
+    }
+
+    header {
+        height: 200px;
+        margin-bottom: -9em;
+    }
+
+    main {
+        width: 350px;
+    }
+}
+
+body {
+    background-color: var(--bkg-color);
+    color: var(--text-color);
+    transition: all 0.30s ease;
 }
 
 .hdr {
@@ -215,6 +244,22 @@ input[type=text]:focus {
     color: hsl(233, 14%, 35%);
 }
 
+label > div {
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+}
+
+@media (max-width:450px) {
+    .btm > div {
+        font-size: 10px;
+    }
+
+    label > div {
+        font-size: 10px;
+    }
+}
+
 .btm > div:nth-child(2) {
     display: flex;
     justify-content: space-around;
@@ -222,12 +267,6 @@ input[type=text]:focus {
 
 input[type=radio] {
     display: none;
-}
-
-label > div {
-    font-size: 14px;
-    font-weight: 700;
-    text-align: center;
 }
 
 label > .checked {
