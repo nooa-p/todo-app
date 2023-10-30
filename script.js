@@ -3,6 +3,7 @@ const header = document.querySelector('header');
 const prefer = window.matchMedia('(prefers-color-scheme: dark)');
 var list = document.querySelector('.list');
 const states = document.getElementById('states');
+const clear_cm = document.getElementById('clear-cm');
 
 // dark & light theme saved to local storage
 const current = localStorage.getItem('theme');
@@ -106,5 +107,14 @@ states.addEventListener('change', (evt) => {
                 child.classList.remove('hide');
             }
         };
+    }
+}, false);
+
+// clearing all completed todos
+clear_cm.addEventListener('click', () => {
+    for (const child of list.children) {
+        if (child.classList.contains('checked')) {
+            child.remove();
+        }
     }
 }, false);
