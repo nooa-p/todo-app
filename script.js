@@ -47,7 +47,7 @@ var i;
 for (i = 0; i < close.length; i++) {
     close[i].onclick = function() {
         var parent = this.parentElement;
-        parent.remove();
+        parent.classList.add('remove');
     }
 };
 
@@ -71,7 +71,7 @@ document.getElementById('new-item').addEventListener('submit', function() {
     for (i = 0; i < close.length; i++) {
         close[i].onclick = function() {
             var parent = this.parentElement;
-            parent.remove();
+            parent.classList.add('remove');
         }
     }
 });
@@ -87,7 +87,7 @@ states.addEventListener('change', (evt) => {
         }
         trg_div.classList.toggle('checked');
         if (trg.id === 'active') {
-            for (const child of list.children) {
+            for (var child of list.children) {
                 if (child.classList.contains('checked')) {
                     child.classList.add('hide');
                 } else {
@@ -95,7 +95,7 @@ states.addEventListener('change', (evt) => {
                 }
             }
         } else if (trg.id === 'complete') {
-            for (const child of list.children) {
+            for (var child of list.children) {
                 if (!child.classList.contains('checked')) {
                     child.classList.add('hide');
                 } else {
@@ -103,7 +103,7 @@ states.addEventListener('change', (evt) => {
                 }
             }
         } else {
-            for (const child of list.children) {
+            for (var child of list.children) {
                 child.classList.remove('hide');
             }
         };
@@ -112,9 +112,9 @@ states.addEventListener('change', (evt) => {
 
 // clearing all completed todos
 clear_cm.addEventListener('click', () => {
-    for (const child of list.children) {
+    for (var child of list.children) {
         if (child.classList.contains('checked')) {
-            child.remove();
+            child.classList.add('remove');
         }
     }
 }, false);
