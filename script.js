@@ -2,7 +2,7 @@ const btn = document.querySelector('.mode-toggle');
 const header = document.querySelector('header');
 const prefer = window.matchMedia('(prefers-color-scheme: dark)');
 var list = document.querySelector('.list');
-
+const states = document.getElementById('states');
 
 // dark & light theme saved to local storage
 const current = localStorage.getItem('theme');
@@ -74,3 +74,17 @@ document.getElementById('new-item').addEventListener('submit', function() {
         }
     }
 });
+
+// switching between different views
+states.addEventListener('change', (evt) => {
+    let trg = evt.target;
+    let trg_div = trg.parentNode;
+    if (trg.type === 'radio' && trg_div && trg_div.tagName === 'DIV') {
+        let prior = states.querySelector('div.checked input[name="state"');
+        if (prior) {
+            prior.parentNode.classList.toggle('checked');
+        }
+        trg_div.classList.toggle('checked');
+
+    }
+}, false);
