@@ -5,7 +5,7 @@ var list = document.querySelector('.list');
 const states = document.getElementById('states');
 const clear_cm = document.getElementById('clear-cm');
 const items = document.getElementById('items-left');
-let item_number = list.childElementCount;
+// let item_number = list.childElementCount;
 
 // dark & light theme saved to local storage
 const current = localStorage.getItem('theme');
@@ -37,12 +37,23 @@ btn.addEventListener("click", function() {
 });
 
 // adding number of items
-items.innerHTML += `${item_number} items left`;
+function itemsLeft() {
+    let item_number = 0;
+    for (var child of list.children) {
+        if (!child.classList.contains('checked')) {
+            item_number++;
+        }
+    }
+    items.innerHTML = `${item_number} items left`;
+};
+
+itemsLeft();
 
 // checking and unchecking todos
 list.addEventListener('click', function(evt) {
     if (evt.target.tagName === 'LI') {
         evt.target.classList.toggle('checked');
+        itemsLeft();
     }
 }, false);
 
@@ -53,6 +64,7 @@ for (i = 0; i < close.length; i++) {
     close[i].onclick = function() {
         var parent = this.parentElement;
         parent.classList.add('remove');
+        itemsLeft();
     }
 };
 
@@ -79,6 +91,8 @@ document.getElementById('new-item').addEventListener('submit', function() {
             parent.classList.add('remove');
         }
     }
+
+    itemsLeft();
 });
 
 // switching between different views
