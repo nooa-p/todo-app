@@ -4,6 +4,8 @@ const prefer = window.matchMedia('(prefers-color-scheme: dark)');
 var list = document.querySelector('.list');
 const states = document.getElementById('states');
 const clear_cm = document.getElementById('clear-cm');
+const items = document.getElementById('items-left');
+let item_number = list.childElementCount;
 
 // dark & light theme saved to local storage
 const current = localStorage.getItem('theme');
@@ -33,6 +35,9 @@ btn.addEventListener("click", function() {
     }
     localStorage.setItem('theme', theme);
 });
+
+// adding number of items
+items.innerHTML += `${item_number} items left`;
 
 // checking and unchecking todos
 list.addEventListener('click', function(evt) {
