@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/responsive-todo-app-with-flexbox-_Uzzw1IeqB](https://www.frontendmentor.io/solutions/responsive-todo-app-with-flexbox-_Uzzw1IeqB)
 - Live Site URL: [https://nooa-p.github.io/todo-app/](https://nooa-p.github.io/todo-app/)
 
 ## My process
