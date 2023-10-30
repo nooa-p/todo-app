@@ -12,7 +12,7 @@ if (current === 'dark') {
 } else if (current === 'light') {
     document.body.classList.toggle('light');
     header.classList.toggle('light');
-}
+};
 
 // dark & light theme toggle
 btn.addEventListener("click", function() {
@@ -48,7 +48,7 @@ for (i = 0; i < close.length; i++) {
         var parent = this.parentElement;
         parent.remove();
     }
-}
+};
 
 // adding a new todo
 document.getElementById('new-item').addEventListener('submit', function() {
@@ -85,6 +85,16 @@ states.addEventListener('change', (evt) => {
             prior.parentNode.classList.toggle('checked');
         }
         trg_div.classList.toggle('checked');
+        if (trg.id === 'active') {
+            for (const child of list.children) {
+                if (child.classList.contains('checked')) {
+                    child.classList.add('hide');
+                }
+            }
+        } else if (trg.id === 'complete') {
 
+        } else {
+
+        };
     }
 }, false);
